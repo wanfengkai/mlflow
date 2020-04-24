@@ -19,6 +19,8 @@ import logging
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
 
+# set environment variable for logging to azure blob storage
+os.environ["AZURE_STORAGE_CONNECTION_STRING"] = "DefaultEndpointsProtocol=https;AccountName=stfengkaideveuw01;AccountKey=omGNfBlvrpZpyhVYmhgtIY9imThMO4gt/KZ+svPLWQR9eU1oUWABAR93IW4zx9nj3jBkduPnQ/RMPKK1uU78yw==;EndpointSuffix=core.windows.net"
 
 def eval_metrics(actual, pred):
     rmse = np.sqrt(mean_squared_error(actual, pred))
